@@ -18,10 +18,7 @@ if ($admin == true) {
         $laburpena = $_POST['laburpena'];
         $xehetasunak = $_POST['xehetasunak'];
 
-        if (is_nan($xehetasunak)) {
-            $mezua = "Zenbakia izan behar da";
-            include('albistea_aldatu.php');
-        } elseif (strlen($izenburua) > 0 && strlen($laburpena) > 0 && strlen($xehetasunak) > 0) {
+        if (strlen($izenburua) > 0 && strlen($laburpena) > 0 && strlen($xehetasunak) > 0) {
             $albistea = new Albistea();
             $albistea->setId($id);
             $albistea->setIzenburua($izenburua);
@@ -42,7 +39,7 @@ if ($admin == true) {
         $albistea = AlbisteaDB::selectAlbistea($id);
 
         if (!$albistea) {
-            header('Location: id_baliogabea.php');
+            include('id_baliogabea.php');
             exit();
         }
         if ($albistea != null) {
@@ -52,10 +49,10 @@ if ($admin == true) {
             $mezua = "";
             include('albistea_aldatu.php');
         } else {
-            header("location: ../index.php");
+            include('../index.php');
         }
     } else {
-        header("location: ../index.php");
+        include('../index.php');
     }
 } else {
     $mezua = "Eremu honetan sartzeko saioa hasi behar duzu.";

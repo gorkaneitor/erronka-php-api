@@ -3,11 +3,11 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Albisteak</title>
+    <title>Albisteen administrazio gunea</title>
 </head>
 
 <body>
-    <h1>Albisteen Administrazio gunea</h1>
+    <h1>Albisteen administrazio gunea</h1>
     <p>Albisteak</p>
     <?php
     for ($i = 0; $i < count($albisteak); $i++) { ?>

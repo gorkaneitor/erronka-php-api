@@ -14,7 +14,11 @@ if (isset($_COOKIE['erabiltzailea']) && $_COOKIE['erabiltzailea'] == "admin") {
 if ($admin == true) {
     if (isset($_POST['ezabatu'])) {
         $id = $_POST['id'];
-        if (AlbisteaDB::ezabatuAlbistea($id) > 0) {
+
+        $albisteaObj = new Albistea();
+        $albisteaObj->setId($id);
+
+        if (AlbisteaDB::ezabatuAlbistea($albisteaObj) > 0) {
             include('albistea_ezabatu_da.php');
         } else {
             include('albistea_ez_da_ezabatu.php');
@@ -24,7 +28,7 @@ if ($admin == true) {
         $albistea = AlbisteaDB::selectAlbistea($id);
 
         if (!$albistea) {
-            header('Location: id_baliogabea.php');
+            include('id_baliogabea.php');
             exit();
         }
         if ($albistea != null) {
@@ -33,10 +37,10 @@ if ($admin == true) {
             $xehetasunak = $albistea->getXehetasunak();
             include('albistea_ezabatu.php');
         } else {
-            header("location: ../index.php");
+            include('../index.php');
         }
     } else {
-        header("location: ../index.php");
+        include('../index.php');
     }
 } else {
     $mezua = "Eremu honetan sartzeko saioa hasi behar duzu.";

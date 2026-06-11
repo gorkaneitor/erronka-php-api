@@ -3,14 +3,14 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Albisteak</title>
+    <title>Albisteen administrazio gunea</title>
 </head>
 
 <body>
-    <h1>Administrazio gunea</h1>
+    <h1>Albisteen administrazio gunea</h1>
     <p><a href="..">Hasiera</a> &gt;</p>
-    <h2>Albiste berria</h2>
-    <p>Albistea ez da gorde.</p>
+    <h2>Albistea aldatu</h2>
+    <p>Albistea ez da aldatu.</p>
     <table cellspacing="5" cellpadding="5" border="1">
         <tr>
             <td align="right">Izenburua:</td>
