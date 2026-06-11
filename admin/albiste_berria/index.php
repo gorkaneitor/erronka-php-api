@@ -40,5 +40,6 @@ if ($admin == true) {
         include('albiste_berria.php');
     }
 } else {
-    header("location: ../index.php");
+    $mezua = "Eremu honetan sartzeko saioa hasi behar duzu.";
+    include('../login.php');
 }

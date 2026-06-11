@@ -58,5 +58,6 @@ if ($admin == true) {
         header("location: ../index.php");
     }
 } else {
-    header("location: ../index.php");
+    $mezua = "Eremu honetan sartzeko saioa hasi behar duzu.";
+    include('../login.php');
 }

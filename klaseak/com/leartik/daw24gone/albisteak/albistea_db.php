@@ -12,7 +12,7 @@ class AlbisteaDB
     {
         try {
             // Ruta relativa con __DIR__: busca 'albisteak.db' en la misma carpeta que este archivo
-            $db = new PDO("sqlite:" . __DIR__ . "/../../../../../albisteak.db");
+            $db = new PDO("sqlite:" . $_SERVER['DOCUMENT_ROOT'] . "/zerbitzari-05-02/albisteak.db");
             $erregistroak = $db->query("SELECT * FROM albisteak");
             $albisteak = array();
             while ($erregistroa = $erregistroak->fetch()) {
@@ -34,7 +34,7 @@ class AlbisteaDB
     {
         try {
             // Ruta relativa corregida
-            $db = new PDO("sqlite:" . __DIR__ . "/../../../../../albisteak.db");
+            $db = new PDO("sqlite:" . $_SERVER['DOCUMENT_ROOT'] . "/zerbitzari-05-02/albisteak.db");
             $erregistroak = $db->query("SELECT * FROM albisteak WHERE id =" . $id);
             $albistea = null;
             while ($erregistroa = $erregistroak->fetch()) {
@@ -55,7 +55,7 @@ class AlbisteaDB
     {
         try {
             // Ruta relativa corregida
-            $db = new PDO("sqlite:" . __DIR__ . "/../../../../../albisteak.db");
+            $db = new PDO("sqlite:" . $_SERVER['DOCUMENT_ROOT'] . "/zerbitzari-05-02/albisteak.db");
             $sql = "insert into albisteak(izenburua,laburpena,xehetasunak) values";
             $sql = $sql . "('" . $albistea->getIzenburua() . "'";
             $sql = $sql . ",'" . $albistea->getLaburpena() . "'";
@@ -72,7 +72,7 @@ class AlbisteaDB
     {
         try {
             // Ruta relativa corregida
-            $db = new PDO("sqlite:" . __DIR__ . "/../../../../../albisteak.db");
+            $db = new PDO("sqlite:" . $_SERVER['DOCUMENT_ROOT'] . "/zerbitzari-05-02/albisteak.db");
             $sql = "UPDATE albisteak 
                     SET izenburua = '" . $albistea->getIzenburua() . "', 
                         laburpena = '" . $albistea->getLaburpena() . "', 
@@ -90,7 +90,7 @@ class AlbisteaDB
     {
         try {
             // Ruta relativa corregida
-            $db = new PDO("sqlite:" . __DIR__ . "/../../../../../albisteak.db");
+            $db = new PDO("sqlite:" . $_SERVER['DOCUMENT_ROOT'] . "/zerbitzari-05-02/albisteak.db");
             $sql = "DELETE FROM albisteak WHERE id = '" . $albistea->getId() . "'";
             $emaitza = $db->exec($sql);
             return $emaitza;
