@@ -1,9 +1,9 @@
 <?php
 
-require('klaseak/com/leartik/daw24doca/albisteak/albistea.php');
-require('klaseak/com/leartik/daw24doca/albisteak/albistea_db.php');
+require('klaseak/com/leartik/daw24gone/albisteak/albistea.php');
+require('klaseak/com/leartik/daw24gone/albisteak/albistea_db.php');
 
-use com\leartik\daw24doca\albisteak\AlbisteaDB;
+use com\leartik\daw24gone\albisteak\AlbisteaDB;
 
 
 

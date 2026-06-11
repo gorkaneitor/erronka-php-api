@@ -1,8 +1,9 @@
 <?php
-require('../../klaseak/com/leartik/daw24doca/albisteak/albistea.php');
-require('../../klaseak/com/leartik/daw24doca/albisteak/albistea_db.php');
-use com\leartik\daw24doca\albisteak\Albistea;
-use com\leartik\daw24doca\albisteak\AlbisteaDB;
+require('../../klaseak/com/leartik/daw24gone/albisteak/albistea.php');
+require('../../klaseak/com/leartik/daw24gone/albisteak/albistea_db.php');
+
+use com\leartik\daw24gone\albisteak\Albistea;
+use com\leartik\daw24gone\albisteak\AlbisteaDB;
 
 if (isset($_COOKIE['erabiltzailea']) && $_COOKIE['erabiltzailea'] == "admin") {
     $admin = true;
@@ -21,11 +22,11 @@ if ($admin == true) {
     } else if (isset($_GET['id'])) {
         $id = $_GET['id'];
         $albistea = AlbisteaDB::selectAlbistea($id);
-        
-        if(!$albistea){
-        header('Location: id_baliogabea.php');
-        exit();
-    }
+
+        if (!$albistea) {
+            header('Location: id_baliogabea.php');
+            exit();
+        }
         if ($albistea != null) {
             $izenburua = $albistea->getIzenburua();
             $laburpena = $albistea->getLaburpena();
@@ -40,4 +41,3 @@ if ($admin == true) {
 } else {
     header("location: ../index.php");
 }
-?>
